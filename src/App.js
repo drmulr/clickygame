@@ -14,17 +14,29 @@ const highscore = 0;
 
 class App extends Component {
   state = {
-    people,
     score: 0,
     highscore: 0,
+    people,
+    added: [],
+    selectedFriends,
   };
 
   alreadySelected = (id) => {
-    if (selectedFriends.indexOf(id) === -1) {
-      selectedFriends.push(id);
+    // If selected toon is not in the array, then push him in there, and add 1 to the score.
+    const reshuffle = this.state.selectedFriends;
+
+    if (this.state.selectedFriends.indexOf(id) === -1) {
+      this.state.selectedFriends.push(id);
       this.setState({ score: this.state.score + 1 });
+      this.shuffle(this.state.people);
       console.log(`Current Score: ${this.state.score}`);
     } else {
+    // if selected toon is in the array, game over, reset score, reset selectedFriends array. If high score, set new high score.
+      if (this.state.score > this.state.highscore) {
+        this.setState({ highscore: this.state.highscore = this.state.score });
+      }
+      this.setState({ score: this.state.score = 0 });
+      this.setState({ selectedFriends: this.state.selectedFriends = [0] });
       console.log('oops');
       console.log(`Current Score: ${this.state.score}`);
     }
@@ -50,27 +62,6 @@ class App extends Component {
     }
     return array;
   }
-
-  // Used like so
-  // var arr = [2, 11, 37, 42];
-  // arr = shuffle(arr);
-  // console.log(arr);
-
-  // ====================================================================================
-
-  // TEST FUNCTION W/ END OF GAME
-  // alreadySelected = (id) => {
-  //   if (selectedFriends.indexOf(id) === -1) {
-  //     selectedFriends.push(id);
-  //   } else if ({this.state.chancesRemaining} > 0) {
-  //     console.log('oops');
-  //     this.setState({ chancesRemaining: this.state.chancesRemaining - 1 });
-  //     console.log(`Chances remaining: ${this.state.chancesRemaining}`);
-  //   } else {
-  //     console.log("Game over")
-  //   }
-  // }
-
   // ====================================================================================
 
   render() {
