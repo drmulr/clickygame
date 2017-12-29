@@ -3,12 +3,12 @@ import './Header.css';
 
 const Header = props => (
 
-  <div><nav className="navbar navbar-expand-lg navbar-light bg-dark fixed-top">
-    <h2 className="navbar brand text-light">Clicky Game</h2>
-    <h5 className="nav-link text-light">Current Score: {props.currentScore}</h5>
-    <h5 className="nav-link text-light">High Score: {props.highScore}</h5>
-       </nav>
-
+  <div>
+    <nav className="navbar navbar-expand-lg navbar-light bg-dark fixed-top" >
+      <h2 className="navbar brand text-light">Clicky Game</h2>
+      <h3 className="nav-link text-light text-right">Current Score: <span>{props.currentScore}</span></h3>
+      <h3 className="nav-link text-light text-right">High Score: <span>{props.highScore}</span></h3>
+    </nav>
   </div>
 
 );

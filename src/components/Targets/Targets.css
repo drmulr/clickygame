@@ -1,8 +1,6 @@
 body {
   margin: auto;
-  /* background-image: url("50859.jpeg");
-  background-repeat: no-repeat;
-  background-width: 100%; */
+  background-color: #003C00;
 }
 
 .container {
@@ -38,7 +36,7 @@ body {
     height: 100%;
     overflow: hidden;
     text-align: center;
-    background:#6CADDC;
+    background:#000000;
   }
 
 .card > .img-container > img {
@@ -48,6 +46,12 @@ body {
     margin-bottom: 0px;
   }
 
+img {
+  position: relative;
+  top: -3rem;
+  width: 100%;
+  margin-bottom: 0px;
+}
 
   /* SAMPLE CODE */
   .navbar .correct {

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Overdrive from 'react-overdrive';
 import logo from './logo.svg';
 import './App.css';
 import Header from './components/Header';
@@ -78,14 +79,9 @@ class App extends Component {
         <div className="container">
           {this.state.people.map(person => (
             <Targets
-              shuffleDeck={this.shuffle}
               alreadySelected={this.alreadySelected}
               id={person.id}
-              key={person.id}
-              name={person.name}
               image={person.image}
-              occupation={person.occupation}
-              location={person.location}
             />
           ))}
         </div>
