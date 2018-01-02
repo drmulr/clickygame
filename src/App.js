@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import Overdrive from 'react-overdrive';
-import logo from './logo.svg';
 import './App.css';
 import Header from './components/Header';
 import Jumbo from './components/Jumbo';
@@ -9,23 +7,17 @@ import people from './people.json';
 
 
 const selectedFriends = [0];
-const chancesRemaining = 3;
-const score = 0;
-const highscore = 0;
 
 class App extends Component {
   state = {
     score: 0,
     highscore: 0,
     people,
-    added: [],
     selectedFriends,
   };
 
   alreadySelected = (id) => {
     // If selected toon is not in the array, then push him in there, and add 1 to the score.
-    const reshuffle = this.state.selectedFriends;
-
     if (this.state.selectedFriends.indexOf(id) === -1) {
       this.state.selectedFriends.push(id);
       this.setState({ score: this.state.score + 1 });
@@ -38,7 +30,6 @@ class App extends Component {
       }
       this.setState({ score: this.state.score = 0 });
       this.setState({ selectedFriends: this.state.selectedFriends = [0] });
-      console.log('oops');
       console.log(`Current Score: ${this.state.score}`);
     }
   }
@@ -69,13 +60,10 @@ class App extends Component {
     return (
       <div>
         <Header
-          numLeft={this.state.chancesRemaining}
           currentScore={this.state.score}
           highScore={this.state.highscore}
         />
-        {/* <div className="container"> */}
-        <Jumbo numLeft={this.state.chancesRemaining} />
-
+        <Jumbo />
         <div className="container">
           {this.state.people.map(person => (
             <Targets
