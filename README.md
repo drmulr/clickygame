@@ -1,6 +1,7 @@
 Click an image, they'll shuffle. Don't click any image more than once or GAME OVER!
 
-![screen shot 2018-02-19 at 12 38 45 pm](https://user-images.githubusercontent.com/29293369/36391308-f86cc6b6-1573-11e8-9580-c7cd5ef7ed17.png)
+![screen shot 2018-02-19 at 1 02 48 pm](https://user-images.githubusercontent.com/29293369/36391624-4c80cf8a-1575-11e8-8ebf-953ad2246d11.png)
+
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
